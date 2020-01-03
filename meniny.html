@@ -6,15 +6,23 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="javascript.js"></script>
-        
+        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAABtgICAt4CAgLeAgIC3gICAt4CAgLeAgIC3gICAt4CAgLeAgIC3gICAt4CAgLeAgIC3AAAAJwAAAAAAAAAAgICAuPX19f/19fX/9fX1//X19f/19fX/9fX1//X19f/19fX/9fX1//X19f/09PT/9PT0//T09P8AAAAwAAAAAICAgLj29vb/9vb2//b29v/29vb/G6cy/xumMv/29vb/9vb2//X19f/19fX/9fX1//X19f+Ojo7/9/f3/wAAABWAgIC49/f3//f39//39/f/FqUq/ym6Tf8puk3/FaIn//b29v/29vb/9vb2//b29v/29vb/9vb2//b29v+AgIC3gICAuPj4+P/4+Pj/FaQo/x2tN/8ToiT/EqAi/x2tNv8Qnh7/9/f3//f39//39/f/9/f3//f39//39/f/gICAuICAgLj4+Pj/+Pj4/xSjJv8ToiT/+Pj4//j4+P8Qnh7/E6Ej/w2bGf/4+Pj/+Pj4//j4+P/4+Pj/+Pj4/4CAgLiAgIC4+fn5//n5+f/5+fn/+fn5//n5+f/5+fn/+fn5/w2bGf8JlhD/C5gV//n5+f/5+fn/+fn5//n5+f+AgIC4gICAuPr6+v/6+vr/+vr6//r6+v/6+vr/+vr6//r6+v/6+vr/DJoY/wGNAv8KlxP/+vr6//r6+v/6+vr/gICAuICAgLj7+/v/+/v7//v7+//7+/v/+/v7//v7+//7+/v/+/v7//v7+/8QmR7/AIQA/w2WGf/7+/v/+/v7/4CAgLiAgIC4/Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8/xOZJf8SmCL//Pz8//z8/P+AgIC4gICAuP39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3/gICAuABkAP0AhgD/AIwB/wWSC/8LmBX/EJ8f/xSjJv8Xpir/F6Yr/xWkJ/8RnyD/DJkW/waTDP8BjQL/AIcA/wBkAP0AZAD9AIoA/wSRCf8LmBX/EaAh/xinLf8drjj/IbI//yGyP/8erjn/xunL/8jqzP/D5sX/xebH/wCLAP8AZAD9AGQA/QGNAv8HlA7/D50c/xemK/8frzr/J7hJ/y2/VP8uwFX/KLlL/yCwPP8Ypy3/EJ4e/wiVD/8CjgP/AGQA/QBkAP0CiQP/ubm5/7m5uf8WoSr/I7NB/y2/VP82ymb/N8to/y7AVv8ktUP/Fp8q/7m5uf+5ubn/AosF/wBkAP0AHAAaABwAG8zMzP/MzMz/ABwAGwAcABsAHAAbABwAGwAcABsAHAAbABwAGwAcABvMzMz/zMzM/wAcABsAHAAagAcAAAADAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAz/MAAA==" rel="icon" type="image/x-icon" />
+        <link href="favicon.ico" rel="icon" type="image/x-icon">        
     </head>
     <body>
         <header>
             <h1>Meniny</h1>
         </header>
-        <input type="text" id="datum" onchange="zmenaDatumu()" size="5" maxlength="5" placeholder="Datum">
-        <input type="text" id="meno" onchange="zmenaMena()" size="5" maxlength="10" placeholder="Meno">
-
+        <div class="stlpec">
+            <label><b>Zadajte datum</b></label>
+            <input type="text" id="datum" onchange="zmenaDatumu()" size="5" maxlength="5" placeholder="Datum" >
+            <span class="napoveda">Zadajte datum v tvare DD.MM</span>
+        </div>
+        <div class="stlpec">
+            <label><b>Zadajte meno</b></label>
+            <input type="text" id="meno" onchange="zmenaMena()" size="5" maxlength="10" placeholder="Meno">
+        </div>
+        
         <div id="meniny"></div>
         <div id="ukazDatum"></div>
 

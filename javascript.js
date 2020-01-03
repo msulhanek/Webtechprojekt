@@ -1,9 +1,10 @@
 window.onload = function(){
     divko = document.getElementById("meniny");
-
+    
     setInputFilter(document.getElementById('datum'), function(value) {
         return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp
       });
+      this.setTimeout(this.dnesnyDatum,100);
 }
 
 $(document).ready(function(){
@@ -12,15 +13,16 @@ $(document).ready(function(){
     })
 })
 
-
 function zobraz(){
     var a = najdiDatum();
+    console.log(datum[2] + datum [3] + "." + datum[0] + datum[1]);
     $('#ukazDatum').html('');
     document.getElementById("meno").value = '';
     $('#meniny').html('');
+    $('#meniny').append("V deň "+ datum[2] + datum [3] + "." + datum[0] + datum[1] + " má meniny:" + "<br><br>");
     $.each(poleMien[a], function(i,data){
         if(i!="den"){
-            console.log(data);
+
             $('#meniny').append(data + "<br>");
         }
         
@@ -28,13 +30,11 @@ function zobraz(){
 }
 
 function najdiDatum(){
-    var datum = (druhe+prve).toString();
-    //console.log((mesiac+den).toString());
+    datum = (druhe+prve).toString();
     var pozicia;
     $.each(poleMien, function(i,data){
         
         if(data.den==datum){
-            //console.log(data.den, i);
             pozicia = i;
         }
         
@@ -44,12 +44,19 @@ function najdiDatum(){
 
 function zmenaDatumu(){
     x = document.getElementById("datum").value;
-    console.log(x.length);
     if(x.search(".")!=-1){
          prve = overenieDna(x.split(".")[0]);
          druhe = overenieMesiaca(x.split(".")[1]);
          zobraz();
     }
+}
+
+function dnesnyDatum(){
+    var d = new Date();
+    druhe = overenieMesiaca((d.getMonth()+1).toString());
+    prve = overenieDna((d.getDate()).toString());
+    console.log(prve, druhe);
+    zobraz();
 }
 
 function overenieDna(den){
@@ -77,7 +84,6 @@ function overenieMesiaca(mesiac){
 function zmenaMena(){
     var meno = document.getElementById("meno").value;
     meno = slugify(meno);
-    //document.getElementById("datum").disabled = true;
     var datum = najdiMeno(meno);
     zobrazMeno(datum);
 }
@@ -107,12 +113,13 @@ function zobrazMeno(datum){
         document.getElementById("datum").value = '';
         $('#ukazDatum').html('');
         $('#meniny').html('');
+        $('#ukazDatum').append("Má meniny ");
         $('#ukazDatum').append(upravenyDatum);
     }
     else{
         $('#ukazDatum').html('');
         $('#meniny').html('');
-        $('#ukazDatum').append("Neplatne meno");
+        $('#ukazDatum').append("Neplatné meno");
     }
 }
 

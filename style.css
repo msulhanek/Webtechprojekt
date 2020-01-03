@@ -1,8 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&display=swap');
+
+
 h1{
     text-align: center;
+    font-family: 'Open Sans';
+    background-color: rgb(228, 228, 228);
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 20px;
 }
 
 div{
-    color: black;
+    color: white;
     text-align: center;
+}
+
+input{   
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.stlpec{
+    margin-top: 50px;
+    width: 50%;
+    float: left;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    background-image: url("pozadie.jpg");
+}
+
+.napoveda {
+    visibility: hidden;
+  z-index: 1;
+}
+
+.stlpec:hover .napoveda{
+    visibility: visible;
+}
+
+#meniny, #ukazDatum{
+    margin-top: 200px;
 }
