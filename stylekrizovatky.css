@@ -53,3 +53,20 @@ body {
     bottom: 0em;
     right: 2em;
 }
+
+nav ul li{
+    display: inline;
+    font-size: xx-large;
+    padding-right: 25px;
+    
+ 
+}
+
+nav{
+    position: relative;
+    top: 0em;
+    right: -27em;
+    font-size: xx-large;
+    margin: 2px;
+
+}
