@@ -54,12 +54,10 @@ body {
     right: 2em;
 }
 
-<<<<<<< HEAD
 canvas {
     border: 1px solid black;
   }
   
-=======
 nav ul li{
     display: inline;
     font-size: xx-large;
@@ -76,4 +74,3 @@ nav{
     margin: 2px;
 
 }
->>>>>>> e4a0e1f80fdf94bee472c5f6204fb6e8d1f12d16
