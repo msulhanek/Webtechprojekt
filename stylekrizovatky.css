@@ -53,3 +53,8 @@ body {
     bottom: 0em;
     right: 2em;
 }
+
+canvas {
+    border: 1px solid black;
+  }
+  
