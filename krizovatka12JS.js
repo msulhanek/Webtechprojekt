@@ -9,6 +9,9 @@ imgAuto10.src = "auto10.png";
 let imgAuto2 = new Image();
 imgAuto2.src = "auto1.png";
 
+let imgAuto3 = new Image();
+imgAuto3.src = "auto2.png";
+
 
 let canvas = document.getElementById('Canvas1');
 let ctx = canvas.getContext('2d');
@@ -21,6 +24,9 @@ secondCarCoordinateY = 100;
 
 thirdCarCoordinateX = 210;
 thirdCarCoordinateY = 0;
+
+fourthCarCoordinateX = 80;
+fourthCarCoordinateY = 130;
 
 var poradie = new Set();
 
@@ -46,12 +52,16 @@ imgAuto2.onload = function(){
     init();
 }
 
+imgAuto3.onload = function(){
+    init();
+}
 
 function init() {
   ctx.drawImage(img,0,0);
   drawFrame(cycleLoop[currentLoopIndex],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
+  ctx.drawImage(imgAuto3,fourthCarCoordinateX,fourthCarCoordinateY);
 } 
 
 let frameCount = 0;
