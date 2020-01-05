@@ -1,7 +1,7 @@
 let img = new Image();
 img.src="Krizovatka1.png";
 let imgAuto = new Image();
-imgAuto.src= "zatacajuceAuto1.png";
+imgAuto.src= "zatacajuceAuto3.png";
 
 let imgAuto10 = new Image();
 imgAuto10.src = "zatacajuceAuto2.png"
@@ -70,7 +70,7 @@ function drawFrameCarFromRight(frameX, frameY, canvasX, canvasY) {
                   
   }
 
-const cycleLoopForBottomCar = [0, 1, 2, 3, 4, 5, 6];
+const cycleLoopForBottomCar = [0, 1, 2, 3, 4, 5, 6, 7];
 let currentLoopIndexForBottomCar = 0;
 let currentDirection = 0;
 
@@ -94,6 +94,16 @@ function stepWithFirstCar() {
     drawFrameCarFromRight(cycleLoopForRightCar[ currentLoopIndexForRightCar],currentDirection,secondCarCoordinateX,secondCarCoordinateY);
 
         if(firstCarCoordinateY > 135){
+            if((firstCarCoordinateY <= 180 & firstCarCoordinateY >= 170 )
+            | (firstCarCoordinateY <= 150 & firstCarCoordinateY >= 140 ) )
+            {
+                currentLoopIndexForBottomCar = 0;
+            }
+
+            else
+            {
+                currentLoopIndexForBottomCar = 1;
+            }
             firstCarCoordinateY = firstCarCoordinateY - scale;
         }
 
@@ -101,7 +111,7 @@ function stepWithFirstCar() {
        if(firstCarCoordinateY <= 135 & firstCarCoordinateY > 90){
         firstCarCoordinateY = firstCarCoordinateY - scale;
         firstCarCoordinateX = firstCarCoordinateX - scale;
-        if(firstCarCoordinateY == 140 | firstCarCoordinateY == 130  | firstCarCoordinateY == 122 | firstCarCoordinateY == 110)
+        if(firstCarCoordinateY == 140 | firstCarCoordinateY == 130  | firstCarCoordinateY == 122 | firstCarCoordinateY == 110 | firstCarCoordinateY == 102)
         {
             currentLoopIndexForBottomCar++;
         }
@@ -109,7 +119,7 @@ function stepWithFirstCar() {
 
         if(firstCarCoordinateY <= 90)
         {
-            currentLoopIndexForBottomCar = 5;
+            currentLoopIndexForBottomCar = 6;
             firstCarCoordinateX = firstCarCoordinateX - scale;
             
         }
@@ -127,7 +137,7 @@ function stepWithSecondCar() {
   while(secondCarCoordinateY > -100)
   {
   frameCount++;
-  if (frameCount < 4) {
+  if (frameCount < 2) {
     window.requestAnimationFrame(stepWithSecondCar);
     return;
   }
@@ -234,10 +244,10 @@ function demoFunction()
     secondCarCoordinateX = 330;
     secondCarCoordinateY = 90;
     stepWithSecondCar();
-  stepWithFirstCar();
+ 
   
 
-//   setTimeout(stepWithSecondCar, 1000 );
+  setTimeout(stepWithFirstCar, 400 );
 
 
 }
