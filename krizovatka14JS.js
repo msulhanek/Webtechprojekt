@@ -181,19 +181,16 @@ canvasElem.addEventListener("mousedown", function(e)
 }); 
 
 function demoFunction(){
+  firstCarCoordinateX = 210;
+firstCarCoordinateY = 200;
+
+secondCarCoordinateX = 310;
+secondCarCoordinateY = 100;
+
+thirdCarCoordinateX = 80;
+thirdCarCoordinateY = 130;
 
     stepWithFirstCar();
     setTimeout(stepWithSecondCar, 1500);
     setTimeout(stepWithThirdCar, 1500);
 }
-
-
-// Funkcia na framy ktore budeme potrebovat ked budeme potrebovat tocit s autom 
-// function drawFrame(frameX, frameY, canvasX, canvasY) {
-//   ctx.drawImage(img,
-//                 frameX * width, frameY * height, width, height,
-//                 canvasX, canvasY, scaledWidth, scaledHeight);
-// }
-
-// const cycleLoop = [0, 1, 0, 2];
-// let currentLoopIndex = 0;
