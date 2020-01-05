@@ -152,13 +152,11 @@ footer  {
         padding-right: 25px;
     }
 
-<<<<<<< HEAD
     #vylustenieKrizovatky{
         height: 2em;
         width: 2em;
         color:red ;
     }
-=======
 #navigacia_krizovatky{
     border-style: solid;
     border-radius: 1em;
@@ -169,4 +167,3 @@ footer  {
     top: -15em;
     left: 73em;
 }
->>>>>>> 00e194b04580f9376950e763a775113e555d8620
