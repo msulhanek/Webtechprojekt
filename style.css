@@ -11,10 +11,7 @@ h1{
     padding: 20px;
 }
 
-div{
-    color: white;
-    text-align: center;
-}
+
 
 input{   
     width: 95%;
@@ -32,26 +29,15 @@ input{
 body {
     font-size: 16px;
     font-family: 'Open Sans';
-    
+    margin: 0px;
 }
 
-.napoveda {
-    visibility: hidden;
-  z-index: 1;
-}
 
-.stlpec:hover .napoveda{
-    visibility: visible;
-}
-
-#meniny, #ukazDatum{
-    margin-top: 200px;
-}
 
 #visitcounter{
-    position: fixed;
-    bottom: 0em;
-    right: 2em;
+    position: relative;
+    bottom: -1em;
+    right: 1em;
 }
 
 nav ul li{
@@ -69,6 +55,32 @@ nav{
     font-size: xx-large;
     margin: 2px;
 
+}
+footer  {
+    text-align: center;
+    padding: 3px;
+    background: #4CA1AF;  
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
+    position: fixed;
+    bottom: 0em;
+    width: 100%;
+        
+    }
+    
+    footer ul li {
+        list-style-type: none;
+        display: inline;
+        padding-right: 25px;
+    }
+    
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+#Rozdelenie_uloh{
+    margin: 1em;
 }
 
 
