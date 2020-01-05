@@ -1,11 +1,13 @@
 let img = new Image();
-img.src = "/images/krizovatka1.png";
+img.src="Krizovatka1.png";
 let imgAuto = new Image();
-imgAuto.src= "/images/Auto6.png";
+imgAuto.src= "auto6.png";
 imgAuto.id = 'auto6';
 
 let imgAuto10 = new Image();
-imgAuto10.src = "/images/Auto10.png"
+imgAuto10.src = "auto10.png"
+
+
 
 img.onload = function() {
   init();
