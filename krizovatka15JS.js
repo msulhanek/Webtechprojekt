@@ -22,7 +22,7 @@ secondCarCoordinateY = 100;
 thirdCarCoordinateX = 100;
 thirdCarCoordinateY = 130;
 
-var poradie = [];
+var poradie = new Set();
 
 const scale = 2;
 
@@ -133,12 +133,17 @@ function stepWithThirdCar(){
 
 function jeDobrePoradie(){
 
-  if( secondCarCoordinateX < 0 & firstCarCoordinateY < 0 & thirdCarCoordinateX > 400 & poradie.length == 3){
-    
-   var iterator1 = poradie.values();
-   
-   console.log(poradie[2]);
-   if(poradie[1]==1 & poradie[2]==3){
+  if( secondCarCoordinateX < 0 & firstCarCoordinateY < 0 & thirdCarCoordinateX > 400 & poradie.size == 3){
+
+      var pole = [];
+      var i = 0;
+   for(var it = poradie.values(), val = null; val = it.next().value;){
+       pole[i] = val;
+       i++;
+   }
+   console.log(pole);
+
+   if(pole[1] == 1 & pole[2] == 3){
     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
      console.log("krizovatka vyriesena spravne");
    }
@@ -158,17 +163,17 @@ function getMovement(canvas, event) {
 
  if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +40 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 30 ){
   window.requestAnimationFrame(stepWithFirstCar);
-  poradie.push(1);
+  poradie.add(1);
  }
 
  if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 40 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 ){
    window.requestAnimationFrame(stepWithSecondCar);
-   poradie.push(2);
+   poradie.add(2);
  }
 
  if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 40 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 40 ){
    window.requestAnimationFrame(stepWithThirdCar);
-   poradie.push(3);
+   poradie.add(3);
  }
 }
 
