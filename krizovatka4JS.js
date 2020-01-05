@@ -19,7 +19,8 @@ firstCarCoordinateY = 20;
 secondCarCoordinateX = 90;
 secondCarCoordinateY = 125;
 
-thirdCarCoordinateX = 200;
+thirdCarCoordinateX = 210;
+thirdCarCoordinateY = 170;
 
 var poradie = new Set();
 
@@ -41,11 +42,17 @@ imgAuto10.onload = function()
   init();
 };
 
+imgAuto3.onload = function()
+{
+  init();
+};
+
 
 function init() {
   ctx.drawImage(img,0,0);
   ctx.drawImage(imgAuto,firstCarCoordinateX,firstCarCoordinateY);
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
+  ctx.drawImage(imgAuto3,thirdCarCoordinateX,thirdCarCoordinateY);
 
 
 } 
@@ -66,6 +73,7 @@ function stepWithFirstCar() {
   ctx.drawImage(img,0,0);
   ctx.drawImage(imgAuto,firstCarCoordinateX,firstCarCoordinateY - scale);
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
+  ctx.drawImage(imgAuto3,thirdCarCoordinateX,thirdCarCoordinateY);
    firstCarCoordinateY = firstCarCoordinateY + scale;
   
 
@@ -89,6 +97,7 @@ function stepWithSecondCar() {
   ctx.drawImage(img,0,0);
   ctx.drawImage(imgAuto,firstCarCoordinateX,firstCarCoordinateY);
   ctx.drawImage(imgAuto10,secondCarCoordinateX - scale,secondCarCoordinateY);
+  ctx.drawImage(imgAuto3,thirdCarCoordinateX,thirdCarCoordinateY);
    secondCarCoordinateX = secondCarCoordinateX + scale;
   
 
@@ -99,14 +108,48 @@ function stepWithSecondCar() {
   jeDobrePoradie();
 
 }
+function stepWithThirdCar() {
+  while(thirdCarCoordinateY >-50)
+  {
+  frameCount++;
+  if (frameCount < 2) {
+    window.requestAnimationFrame(stepWithThirdCar);
+    return;
+  }
+  frameCount = 0;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(img,0,0);
+  ctx.drawImage(imgAuto,firstCarCoordinateX,firstCarCoordinateY - scale);
+  ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
+  ctx.drawImage(imgAuto3,thirdCarCoordinateX,thirdCarCoordinateY);
+   thirdCarCoordinateY = thirdCarCoordinateY - scale;
+  
+
+  // if (currentLoopIndex >= cycleLoop.length) {
+  //   currentLoopIndex = 0;
+  // }
+  }
+  jeDobrePoradie();
+}
 
 function jeDobrePoradie()
 {
-  if( secondCarCoordinateX > 300 & firstCarCoordinateY > 0 & poradie.size == 2)
+  if( secondCarCoordinateX > 300 & firstCarCoordinateY > 0 & thirdCarCoordinateY < 80 & poradie.size == 3)
   {
     
-   var iterator1 = poradie.values();
-   if(iterator1.next().value == 1)
+   var pole =[];
+   var i=0;
+   for(var it = poradie.values(), val = null; val = it.next().value;){
+    pole[i] = val;
+    i++;
+}
+console.log(pole);
+   if(pole[0]==3 & pole[1]==2)
+   {
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
+     console.log("krizovatka vyriesena spravne");
+   }
+   else if(pole[0]==2 & pole[1]==3)
    {
     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
      console.log("krizovatka vyriesena spravne");
@@ -139,6 +182,12 @@ function getMovement(canvas, event) {
    poradie.add(1);
    console.log(poradie);
  }
+ if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 40 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 40 )
+ {
+   window.requestAnimationFrame(stepWithThirdCar);
+   poradie.add(3);
+   console.log(poradie);
+ }
 }
 
 let canvasElem = document.querySelector("canvas"); 
@@ -150,13 +199,17 @@ canvasElem.addEventListener("mousedown", function(e)
 
 function demoFunction()
 {
-  firstCarCoordinateX = 230;
-  firstCarCoordinateY = 200;
-
-  secondCarCoordinateX = 310;
+  firstCarCoordinateX = 210;
+  firstCarCoordinateY = 20;
+  
+  secondCarCoordinateX = 90;
   secondCarCoordinateY = 125;
-  stepWithSecondCar();
-  setTimeout(stepWithFirstCar, 3000);
+  
+  thirdCarCoordinateX = 210;
+  thirdCarCoordinateY = 170;
+  stepWithThirdCar();
+  setTimeout(stepWithFirstCar,30);
+  setTimeout(stepWithSecondCar, 3000);
   
 }
 
