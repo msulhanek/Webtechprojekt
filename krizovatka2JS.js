@@ -103,6 +103,7 @@ function stepWithFirstCar() {
             
         }
     }
+    currentLoopIndex = 0;
     jeDobrePoradie();
   }
 
