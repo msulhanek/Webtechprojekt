@@ -1,19 +1,18 @@
 let img = new Image();
 img.src="Krizovatka1.png";
 let imgAuto = new Image();
-imgAuto.src= "auto6.png";
-imgAuto.id = 'auto6';
+imgAuto.src= "auto3.png";
 
 let imgAuto10 = new Image();
 imgAuto10.src = "auto10.png";
 
 let imgAuto2 = new Image();
-imgAuto2.src = "auto10.png";
+imgAuto2.src = "auto2.png";
 
 let canvas = document.getElementById('Canvas1');
 let ctx = canvas.getContext('2d');
 
-firstCarCoordinateX = 230;
+firstCarCoordinateX = 210;
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
