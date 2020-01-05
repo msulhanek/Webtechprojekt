@@ -141,15 +141,12 @@ function jeDobrePoradie(){
        pole[i] = val;
        i++;
    }
-   console.log(pole);
 
    if(pole[1] == 1 & pole[2] == 3){
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
-     console.log("krizovatka vyriesena spravne");
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka vyriešená správne, aplikuje sa pravidlo pravej ruky';
    }
    else{
-     console.log("Krizovatka vyriesena nespravne");
-     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena nespravne';
+     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka nebola vyriešená správne <br> Nápoveda: Aplikuj pravidlo pravej ruky';
    }
    
  } 
