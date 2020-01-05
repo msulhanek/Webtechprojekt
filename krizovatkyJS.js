@@ -109,7 +109,7 @@ function jeDobrePoradie()
    else
    {
      console.log("Krizovatka vyriesena nespravne");
-     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena nespravne';
+     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena nespravne, modre auto ma prendost sprava';
    }
    
  } 
@@ -152,7 +152,7 @@ function demoFunction()
   secondCarCoordinateY = 125;
   stepWithSecondCar();
   setTimeout(stepWithFirstCar, 3000);
-
+  
 }
 
 
