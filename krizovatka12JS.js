@@ -4,7 +4,7 @@ let imgAuto = new Image();
 imgAuto.src= "zatacajuceAuto1.png";
 
 let imgAuto10 = new Image();
-imgAuto10.src = "auto10.png";
+imgAuto10.src = "zatacajuceauto2.png";
 
 let imgAuto2 = new Image();
 imgAuto2.src = "auto1.png";
@@ -35,16 +35,13 @@ const scale = 2;
 
 img.onload = function() {
   init();
-
 };
 
-imgAuto.onload = function()
-{
+imgAuto.onload = function(){
   init();
 };
 
-imgAuto10.onload = function()
-{
+imgAuto10.onload = function(){
   init();
 };
 
@@ -78,7 +75,7 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
                   
 }
 
-const cycleLoop = [0, 1, 2, 3, 4, 5, 6];
+const cycleLoop = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let currentLoopIndex = 0;
 let currentDirection = 0;
 
@@ -97,6 +94,7 @@ function stepWithFirstCar() {
   drawFrame(cycleLoop[currentLoopIndex],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
+  ctx.drawImage(imgAuto3,fourthCarCoordinateX,fourthCarCoordinateY);
   if(firstCarCoordinateY > 135){
     firstCarCoordinateY = firstCarCoordinateY - scale;
 }
@@ -136,6 +134,7 @@ function stepWithSecondCar() {
   drawFrame(cycleLoop[ currentLoopIndex],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
   ctx.drawImage(imgAuto10,secondCarCoordinateX - scale,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
+  ctx.drawImage(imgAuto3,fourthCarCoordinateX,fourthCarCoordinateY);
    secondCarCoordinateX = secondCarCoordinateX - scale;
  
   }
@@ -157,7 +156,30 @@ function stepWithThirdCar(){
   drawFrame(cycleLoop[ currentLoopIndex],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
   ctx.drawImage(imgAuto10,secondCarCoordinateX ,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX + scale, thirdCarCoordinateY);
+  ctx.drawImage(imgAuto3,fourthCarCoordinateX,fourthCarCoordinateY);
    thirdCarCoordinateY = thirdCarCoordinateY + scale;
+  
+  }
+  jeDobrePoradie();
+
+}
+
+function stepWithFourthCar(){
+    while(fourthCarCoordinateX < 450)
+  {
+  frameCount++;
+  if (frameCount < 2) {
+    window.requestAnimationFrame(stepWithFourthCar);
+    return;
+  }
+  frameCount = 0;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(img,0,0);
+  drawFrame(cycleLoop[ currentLoopIndex],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
+  ctx.drawImage(imgAuto10,secondCarCoordinateX ,secondCarCoordinateY);
+  ctx.drawImage(imgAuto2,thirdCarCoordinateX + scale, thirdCarCoordinateY);
+  ctx.drawImage(imgAuto3,fourthCarCoordinateX,fourthCarCoordinateY);
+   fourthCarCoordinateX = fourthCarCoordinateX + scale;
   
   }
   jeDobrePoradie();
@@ -206,6 +228,11 @@ function getMovement(canvas, event) {
    window.requestAnimationFrame(stepWithThirdCar);
    poradie.add(3);
  }
+ if( x >= fourthCarCoordinateX & x <= fourthCarCoordinateX + 40 & y >= fourthCarCoordinateY & y <= fourthCarCoordinateY + 40 ){
+    window.requestAnimationFrame(stepWithFourthCar);
+    poradie.add(4);
+  }
+
 }
 
 let canvasElem = document.querySelector("canvas"); 
@@ -220,4 +247,5 @@ function demoFunction(){
     stepWithThirdCar();
     setTimeout(stepWithFirstCar, 1500);
     setTimeout(stepWithSecondCar, 2500);
+    setTimeout(stepWithFourthCar, 2500);
 }
