@@ -96,3 +96,9 @@ footer  {
         display: inline;
         padding-right: 25px;
     }
+
+    #vylustenieKrizovatky{
+        height: 2em;
+        width: 2em;
+        color:red ;
+    }
