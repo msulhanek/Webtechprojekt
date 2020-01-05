@@ -1,7 +1,7 @@
 let img = new Image();
 img.src="Krizovatka4.png";
 let imgAuto = new Image();
-imgAuto.src= "zatacajuceAuto1.png";
+imgAuto.src= "zatacajuceAuto3.png";
 
 let imgAuto10 = new Image();
 imgAuto10.src = "auto10.png";
@@ -67,7 +67,7 @@ function drawFrame(frameX, frameY, canvasX, canvasY) {
                   
 }
 
-const cycleLoop = [0, 1, 2, 3, 4, 5, 6];
+const cycleLoop = [0, 1, 2, 3, 4, 5, 6, 7];
 let currentLoopIndex = 0;
 let currentDirection = 0;
 
@@ -87,6 +87,16 @@ function stepWithFirstCar() {
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
   if(firstCarCoordinateY > 135){
+    if((firstCarCoordinateY <= 180 & firstCarCoordinateY >= 170 )
+    | (firstCarCoordinateY <= 150 & firstCarCoordinateY >= 140 ) )
+    {
+        currentLoopIndexForBottomCar = 0;
+    }
+
+    else
+    {
+        currentLoopIndexForBottomCar = 1;
+    }
     firstCarCoordinateY = firstCarCoordinateY - scale;
 }
 
@@ -94,7 +104,7 @@ function stepWithFirstCar() {
 if(firstCarCoordinateY <= 135 & firstCarCoordinateY > 90){
 firstCarCoordinateY = firstCarCoordinateY - scale;
 firstCarCoordinateX = firstCarCoordinateX - scale;
-if(firstCarCoordinateY == 140 | firstCarCoordinateY == 130  | firstCarCoordinateY == 122 | firstCarCoordinateY == 110)
+if(firstCarCoordinateY == 140 | firstCarCoordinateY == 130  | firstCarCoordinateY == 122 | firstCarCoordinateY == 110 | firstCarCoordinateY == 102)
 {
     currentLoopIndex++;
 }
@@ -102,7 +112,7 @@ if(firstCarCoordinateY == 140 | firstCarCoordinateY == 130  | firstCarCoordinate
 
 if(firstCarCoordinateY <= 90)
 {
-    currentLoopIndex = 5;
+    currentLoopIndex = 6;
     firstCarCoordinateX = firstCarCoordinateX - scale;
     
 }
@@ -166,7 +176,7 @@ function jeDobrePoradie(){
    
 
    if(pole[1] == 1 & pole[2] == 2){
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne, auta sa riadia dopravným značením';
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka vyriešená správne, autá sa riadia dopravným značením';
    }
    else{
      document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka nebola vyriešená správne <br> Nápoveda: Skontroluj dopravné značenie';
@@ -181,17 +191,17 @@ function getMovement(canvas, event) {
   let x = event.clientX - rect.left; 
   let y = event.clientY - rect.top; 
 
- if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +40 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 30 ){
+ if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +40 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 60 ){
   window.requestAnimationFrame(stepWithFirstCar);
   poradie.add(1);
  }
 
- if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 40 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 ){
+ if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 80 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 ){
    window.requestAnimationFrame(stepWithSecondCar);
    poradie.add(2);
  }
 
- if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 40 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 40 ){
+ if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 40 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 80 ){
    window.requestAnimationFrame(stepWithThirdCar);
    poradie.add(3);
  }
@@ -213,6 +223,7 @@ secondCarCoordinateY = 100;
 
 thirdCarCoordinateX = 210;
 thirdCarCoordinateY = 0;
+currentLoopIndex = 0;
 
     stepWithThirdCar();
     setTimeout(stepWithFirstCar, 1500);

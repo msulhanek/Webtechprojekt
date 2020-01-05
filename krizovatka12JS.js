@@ -1,7 +1,7 @@
 let img = new Image();
 img.src="Krizovatka4.png";
 let imgAuto = new Image();
-imgAuto.src= "zatacajuceAuto1.png";
+imgAuto.src= "zatacajuceAuto3.png";
 
 let imgAuto10 = new Image();
 imgAuto10.src = "zatacajuceauto2.png";
@@ -86,7 +86,7 @@ function drawFrameCarFromRight(frameX, frameY, canvasX, canvasY) {
                   
   }
 
-  const cycleLoopForBottomCar = [0, 1, 2, 3, 4, 5, 6];
+  const cycleLoopForBottomCar = [0, 1, 2, 3, 4, 5, 6, 7];
   let currentLoopIndexForBottomCar = 0;
   let currentDirection = 0;
 
@@ -107,6 +107,16 @@ function stepWithFirstCar() {
     ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
     ctx.drawImage(imgAuto3,fourthCarCoordinateX,fourthCarCoordinateY);
         if(firstCarCoordinateY > 135){
+            if((firstCarCoordinateY <= 180 & firstCarCoordinateY >= 170 )
+            | (firstCarCoordinateY <= 150 & firstCarCoordinateY >= 140 ) )
+            {
+                currentLoopIndexForBottomCar = 0;
+            }
+
+            else
+            {
+                currentLoopIndexForBottomCar = 1;
+            }
             firstCarCoordinateY = firstCarCoordinateY - scale;
         }
 
@@ -114,7 +124,7 @@ function stepWithFirstCar() {
        if(firstCarCoordinateY <= 135 & firstCarCoordinateY > 90){
         firstCarCoordinateY = firstCarCoordinateY - scale;
         firstCarCoordinateX = firstCarCoordinateX - scale;
-        if(firstCarCoordinateY == 140 | firstCarCoordinateY == 130  | firstCarCoordinateY == 122 | firstCarCoordinateY == 110)
+        if(firstCarCoordinateY == 140 | firstCarCoordinateY == 130  | firstCarCoordinateY == 122 | firstCarCoordinateY == 110 | firstCarCoordinateY == 102)
         {
             currentLoopIndexForBottomCar++;
         }
@@ -122,12 +132,12 @@ function stepWithFirstCar() {
 
         if(firstCarCoordinateY <= 90)
         {
-            currentLoopIndexForBottomCar = 5;
+            currentLoopIndexForBottomCar = 6;
             firstCarCoordinateX = firstCarCoordinateX - scale;
             
         }
     }
-    currentLoopIndexForBottomCar = 5;
+    currentLoopIndexForBottomCar = 6;
     jeDobrePoradie();
 }
 
@@ -270,21 +280,21 @@ function getMovement(canvas, event) {
   let x = event.clientX - rect.left; 
   let y = event.clientY - rect.top; 
 
- if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +40 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 30 ){
+ if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +30 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 60 ){
   window.requestAnimationFrame(stepWithFirstCar);
   poradie.add(1);
  }
 
- if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 40 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 ){
+ if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 70 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 ){
    window.requestAnimationFrame(stepWithSecondCar);
    poradie.add(2);
  }
 
- if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 40 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 40 ){
+ if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 40 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 80 ){
    window.requestAnimationFrame(stepWithThirdCar);
    poradie.add(3);
  }
- if( x >= fourthCarCoordinateX & x <= fourthCarCoordinateX + 40 & y >= fourthCarCoordinateY & y <= fourthCarCoordinateY + 40 ){
+ if( x >= fourthCarCoordinateX & x <= fourthCarCoordinateX + 80 & y >= fourthCarCoordinateY & y <= fourthCarCoordinateY + 40 ){
     window.requestAnimationFrame(stepWithFourthCar);
     poradie.add(4);
   }
