@@ -1,5 +1,5 @@
 let img = new Image();
-img.src="Krizovatka1.png";
+img.src="Krizovatka6.png";
 let imgAuto = new Image();
 imgAuto.src= "zatacajuceAuto3.png";
 
@@ -12,8 +12,8 @@ let ctx = canvas.getContext('2d');
 firstCarCoordinateX = 225;
 firstCarCoordinateY = 200;
 
-secondCarCoordinateX = 330;
-secondCarCoordinateY = 90;
+secondCarCoordinateX = 510;
+secondCarCoordinateY = 110;
 
 var poradie = new Set();
 
@@ -130,7 +130,7 @@ function stepWithFirstCar() {
 
   
 const cycleLoopForRightCar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let currentLoopIndexForRightCar = 0;
+let currentLoopIndexForRightCar = 1;
 
 
 function stepWithSecondCar() {
@@ -147,33 +147,69 @@ function stepWithSecondCar() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(img,0,0);
   drawFrameCarFromBottom(cycleLoopForBottomCar[ currentLoopIndexForBottomCar],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
-  drawFrameCarFromRight(cycleLoopForRightCar[ currentLoopIndexForRightCar],currentDirection,secondCarCoordinateX,secondCarCoordinateY);
+  
 
-         if(secondCarCoordinateX > 234){
+         if(secondCarCoordinateX > 343){
             secondCarCoordinateX = secondCarCoordinateX - scale;
-            if((secondCarCoordinateX <= 320 & secondCarCoordinateX >= 310) | (secondCarCoordinateX <= 290 & secondCarCoordinateX >= 280)
-            | (secondCarCoordinateX <= 270 & secondCarCoordinateX >= 260)| (secondCarCoordinateX <= 240 & secondCarCoordinateX >= 230)  )
-            {
-                currentLoopIndexForRightCar = 1;
-            }
-
-            else
-            {
-                currentLoopIndexForRightCar = 0;   
-            }
-        }
+         }
 
 
-       if(secondCarCoordinateX <= 234 & secondCarCoordinateX > 216){
+
+       if(secondCarCoordinateX <= 343 & secondCarCoordinateX > 282){
+        if(secondCarCoordinateX == 342)
+            currentLoopIndexForRightCar++;
         secondCarCoordinateX = secondCarCoordinateX - scale;
+        
         secondCarCoordinateY = secondCarCoordinateY - scale;
-        if(secondCarCoordinateX <= 234 & secondCarCoordinateX > 216)
+         if(secondCarCoordinateX == 338)
         {
             currentLoopIndexForRightCar++;
         }
+        if(secondCarCoordinateX == 335)
+        {
+            currentLoopIndexForRightCar++;
+        }
+
+        if(secondCarCoordinateX == 328)
+        {
+            currentLoopIndexForRightCar++;
+            
+        }
+        if(secondCarCoordinateX == 321)
+        {
+            currentLoopIndexForRightCar++;
+        }
+        if(secondCarCoordinateX == 316)
+        {
+            currentLoopIndexForRightCar++;
+           
+        }
+
+        if(secondCarCoordinateX == 308)
+        {
+            currentLoopIndexForRightCar++;
+            
+        }
+
+        if(secondCarCoordinateX == 302)
+        {
+            currentLoopIndexForRightCar++;
+            
+        }
+        if(secondCarCoordinateX == 290)
+        {
+            currentLoopIndexForRightCar++;
+            
+        }
+
+        // if(secondCarCoordinateX <= 343 & secondCarCoordinateX > 284 & (secondCarCoordinateX % 9 == 0 ))
+        // {
+        //     currentLoopIndexForRightCar++;
+        // }
+  
     }
 
-        if(secondCarCoordinateX <= 216)
+        if(secondCarCoordinateX <= 282)
         {
             if((secondCarCoordinateY <= 70 & secondCarCoordinateY >= 60)
              | (secondCarCoordinateY <= 50 & secondCarCoordinateY >= 40) 
@@ -190,6 +226,8 @@ function stepWithSecondCar() {
             secondCarCoordinateY = secondCarCoordinateY - scale;
             
         }
+
+        drawFrameCarFromRight(cycleLoopForRightCar[ currentLoopIndexForRightCar],currentDirection,secondCarCoordinateX,secondCarCoordinateY);
 
   
   }
