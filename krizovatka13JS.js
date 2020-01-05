@@ -12,7 +12,7 @@ imgAuto2.src = "auto6.png";
 let canvas = document.getElementById('Canvas1');
 let ctx = canvas.getContext('2d');
 
-firstCarCoordinateX = 230;
+firstCarCoordinateX = 225;
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
@@ -48,7 +48,7 @@ imgAuto2.onload = function(){
 
 function init() {
   ctx.drawImage(img,0,0);
-  drawFrame(cycleLoop[ currentLoopIndex],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
+  drawFrame(cycleLoop[currentLoopIndex],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
 } 
@@ -83,7 +83,7 @@ function stepWithFirstCar() {
   frameCount = 0;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(img,0,0);
-  drawFrame(cycleLoop[ currentLoopIndex],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
+  drawFrame(cycleLoop[currentLoopIndex],currentDirection,firstCarCoordinateX,firstCarCoordinateY);
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
   if(firstCarCoordinateY > 135){
@@ -205,6 +205,14 @@ canvasElem.addEventListener("mousedown", function(e)
 }); 
 
 function demoFunction(){
+  firstCarCoordinateX = 225;
+firstCarCoordinateY = 200;
+
+secondCarCoordinateX = 310;
+secondCarCoordinateY = 100;
+
+thirdCarCoordinateX = 210;
+thirdCarCoordinateY = 0;
 
     stepWithThirdCar();
     setTimeout(stepWithFirstCar, 1500);
