@@ -145,10 +145,10 @@ canvasElem.addEventListener("mousedown", function(e)
 
 function demoFunction()
 {
-  firstCarCoordinateX = 230;
-  firstCarCoordinateY = 200;
+  firstCarCoordinateX = 210;
+  firstCarCoordinateY = 20;
 
-  secondCarCoordinateX = 310;
+  secondCarCoordinateX = 90;
   secondCarCoordinateY = 125;
   stepWithSecondCar();
   setTimeout(stepWithFirstCar, 3000);
