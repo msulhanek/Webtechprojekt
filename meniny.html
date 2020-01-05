@@ -10,16 +10,14 @@
         <link href="favicon.ico" rel="icon" type="image/x-icon">        
     </head>
     <body>
-        <header>
-            <h1>Meniny</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="index.html"> Hlavná stránka</a></li>
-                <li> <a href="krizovatky.html">Krizovatky </a> </li>
-                <li><a href="meniny.html"> Meniny</a></li>
-            </ul>
-        </nav>
+        <div class="header">
+            <a href="#default" class="logo">Meniny</a>
+            <div class="header-right">
+              <a class="active" href="index.html">Hlavná stránka</a>
+              <a href="krizovatky.html">Krizovatky</a>
+              <a href="meniny.html">Meniny</a>
+            </div>
+          </div>
         <div class="stlpec">
             <label><b>Zadajte datum</b></label>
             <input type="text" id="datum" onchange="zmenaDatumu()" size="5" maxlength="5" placeholder="Datum" >
