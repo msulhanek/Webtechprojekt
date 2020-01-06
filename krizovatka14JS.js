@@ -173,10 +173,10 @@ function demoFunction(){
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
-secondCarCoordinateY = 100;
+secondCarCoordinateY = 106;
 
 thirdCarCoordinateX = 80;
-thirdCarCoordinateY = 130;
+thirdCarCoordinateY = 135;
 
     stepWithFirstCar();
     setTimeout(stepWithSecondCar, 1500);

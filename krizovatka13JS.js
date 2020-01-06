@@ -90,12 +90,12 @@ function stepWithFirstCar() {
     if((firstCarCoordinateY <= 180 & firstCarCoordinateY >= 170 )
     | (firstCarCoordinateY <= 150 & firstCarCoordinateY >= 140 ) )
     {
-        currentLoopIndexForBottomCar = 0;
+        currentLoopIndex = 0;
     }
 
     else
     {
-        currentLoopIndexForBottomCar = 1;
+        currentLoopIndex = 1;
     }
     firstCarCoordinateY = firstCarCoordinateY - scale;
 }
@@ -118,6 +118,7 @@ if(firstCarCoordinateY <= 90)
 }
   
   }
+  currentLoopIndex = 6;
   jeDobrePoradie();
 }
 
@@ -219,7 +220,7 @@ function demoFunction(){
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
-secondCarCoordinateY = 100;
+secondCarCoordinateY = 106;
 
 thirdCarCoordinateX = 210;
 thirdCarCoordinateY = 0;

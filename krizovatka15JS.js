@@ -71,11 +71,6 @@ function stepWithFirstCar() {
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
    firstCarCoordinateY = firstCarCoordinateY - scale;
-  
-
-  // if (currentLoopIndex >= cycleLoop.length) {
-  //   currentLoopIndex = 0;
-  // }
   }
   jeDobrePoradie();
 }
@@ -96,10 +91,6 @@ function stepWithSecondCar() {
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
    secondCarCoordinateX = secondCarCoordinateX - scale;
   
-
-  // if (currentLoopIndex >= cycleLoop.length) {
-  //   currentLoopIndex = 0;
-  // }
   }
   jeDobrePoradie();
 
@@ -121,10 +112,6 @@ function stepWithThirdCar(){
   ctx.drawImage(imgAuto2,thirdCarCoordinateX + scale, thirdCarCoordinateY);
    thirdCarCoordinateX = thirdCarCoordinateX + scale;
   
-
-  // if (currentLoopIndex >= cycleLoop.length) {
-  //   currentLoopIndex = 0;
-  // }
   }
   jeDobrePoradie();
 
@@ -187,10 +174,10 @@ function demoFunction()
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
-secondCarCoordinateY = 100;
+secondCarCoordinateY = 106;
 
 thirdCarCoordinateX = 100;
-thirdCarCoordinateY = 130;
+thirdCarCoordinateY = 135;
   stepWithSecondCar();
   setTimeout(stepWithFirstCar, 1000);
   setTimeout(stepWithThirdCar, 2000);
