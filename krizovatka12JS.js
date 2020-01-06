@@ -26,7 +26,7 @@ thirdCarCoordinateX = 210;
 thirdCarCoordinateY = 0;
 
 fourthCarCoordinateX = 80;
-fourthCarCoordinateY = 130;
+fourthCarCoordinateY = 135;
 
 var poradie = new Set();
 

@@ -7,7 +7,7 @@ let imgAuto10 = new Image();
 imgAuto10.src = "auto10.png";
 
 let imgAuto2 = new Image();
-imgAuto2.src = "auto6.png";
+imgAuto2.src = "auto6otocene.png";
 
 let canvas = document.getElementById('Canvas1');
 let ctx = canvas.getContext('2d');
@@ -16,7 +16,7 @@ firstCarCoordinateX = 225;
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
-secondCarCoordinateY = 100;
+secondCarCoordinateY = 106;
 
 thirdCarCoordinateX = 210;
 thirdCarCoordinateY = 0;

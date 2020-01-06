@@ -16,10 +16,10 @@ firstCarCoordinateX = 210;
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
-secondCarCoordinateY = 100;
+secondCarCoordinateY = 106;
 
 thirdCarCoordinateX = 100;
-thirdCarCoordinateY = 130;
+thirdCarCoordinateY = 135;
 
 var poradie = new Set();
 
