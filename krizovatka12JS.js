@@ -4,7 +4,7 @@ let imgAuto = new Image();
 imgAuto.src= "zatacajuceAuto1.png";
 
 let imgAuto10 = new Image();
-imgAuto10.src = "zatacajuceauto2.png";
+imgAuto10.src = "zatacajuceAuto2.png";
 
 let imgAuto2 = new Image();
 imgAuto2.src = "auto1.png";
