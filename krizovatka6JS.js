@@ -17,7 +17,7 @@ firstCarCoordinateX = 210;
 firstCarCoordinateY = 20;
 
 secondCarCoordinateX = 90;
-secondCarCoordinateY = 125;
+secondCarCoordinateY = 133;
 
 thirdCarCoordinateX = 210;
 thirdCarCoordinateY = 170;

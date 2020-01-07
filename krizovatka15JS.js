@@ -16,10 +16,10 @@ firstCarCoordinateX = 210;
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
-secondCarCoordinateY = 100;
+secondCarCoordinateY = 106;
 
 thirdCarCoordinateX = 100;
-thirdCarCoordinateY = 130;
+thirdCarCoordinateY = 135;
 
 var poradie = new Set();
 
@@ -71,11 +71,6 @@ function stepWithFirstCar() {
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
    firstCarCoordinateY = firstCarCoordinateY - scale;
-  
-
-  // if (currentLoopIndex >= cycleLoop.length) {
-  //   currentLoopIndex = 0;
-  // }
   }
   jeDobrePoradie();
 }
@@ -96,10 +91,6 @@ function stepWithSecondCar() {
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
    secondCarCoordinateX = secondCarCoordinateX - scale;
   
-
-  // if (currentLoopIndex >= cycleLoop.length) {
-  //   currentLoopIndex = 0;
-  // }
   }
   jeDobrePoradie();
 
@@ -121,10 +112,6 @@ function stepWithThirdCar(){
   ctx.drawImage(imgAuto2,thirdCarCoordinateX + scale, thirdCarCoordinateY);
    thirdCarCoordinateX = thirdCarCoordinateX + scale;
   
-
-  // if (currentLoopIndex >= cycleLoop.length) {
-  //   currentLoopIndex = 0;
-  // }
   }
   jeDobrePoradie();
 
@@ -157,17 +144,17 @@ function getMovement(canvas, event) {
   let x = event.clientX - rect.left; 
   let y = event.clientY - rect.top; 
 
- if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +40 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 30 ){
+ if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +40 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 60 ){
   window.requestAnimationFrame(stepWithFirstCar);
   poradie.add(1);
  }
 
- if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 40 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 ){
+ if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 80 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 ){
    window.requestAnimationFrame(stepWithSecondCar);
    poradie.add(2);
  }
 
- if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 40 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 40 ){
+ if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 80 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 40 ){
    window.requestAnimationFrame(stepWithThirdCar);
    poradie.add(3);
  }
@@ -187,10 +174,10 @@ function demoFunction()
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
-secondCarCoordinateY = 100;
+secondCarCoordinateY = 106;
 
 thirdCarCoordinateX = 100;
-thirdCarCoordinateY = 130;
+thirdCarCoordinateY = 135;
   stepWithSecondCar();
   setTimeout(stepWithFirstCar, 1000);
   setTimeout(stepWithThirdCar, 2000);
