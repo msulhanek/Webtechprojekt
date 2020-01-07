@@ -24,6 +24,7 @@ thirdCarCoordinateY = 135;
 var poradie = new Set();
 
 const scale = 2;
+const scale2=0.25;
 
 
 img.onload = function() {
@@ -51,6 +52,7 @@ function init() {
   ctx.drawImage(imgAuto,firstCarCoordinateX,firstCarCoordinateY);
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
+  window.requestAnimationFrame(stepWithFirstCar);
 } 
 
 
@@ -67,10 +69,10 @@ function stepWithFirstCar() {
   frameCount = 0;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(img,0,0);
-  ctx.drawImage(imgAuto,firstCarCoordinateX,firstCarCoordinateY - scale);
+  ctx.drawImage(imgAuto,firstCarCoordinateX,firstCarCoordinateY - scale2);
   ctx.drawImage(imgAuto10,secondCarCoordinateX,secondCarCoordinateY);
   ctx.drawImage(imgAuto2,thirdCarCoordinateX, thirdCarCoordinateY);
-   firstCarCoordinateX = firstCarCoordinateX + scale;
+   firstCarCoordinateX = firstCarCoordinateX + scale2;
   }
   jeDobrePoradie();
 }
