@@ -98,10 +98,39 @@ function zmenaMena(){
 function najdiMeno(meno){
     var datum = 0;
     var pole;
-    
+    krajina = document.getElementById("vyberKrajiny").value;
+    console.log(typeof(krajina=="SK"));
     $.each(poleMien, function(i, data){
-        if(typeof(data.SK)!=='undefined'){
+        if(typeof(data.SK)!=='undefined' & krajina=="SK"){
+             
             pole = (slugify(data.SK)).split(", ");
+            
+            for(i=0;i<pole.length;i++){
+                if(pole[i].toLowerCase()==meno.toLowerCase()){
+                    datum = data.den;
+                }
+            }
+        }
+        if(typeof(data.CZ)!=='undefined' & krajina=="CZ"){
+            pole = (slugify(data.CZ)).split(", ");
+            
+            for(i=0;i<pole.length;i++){
+                if(pole[i].toLowerCase()==meno.toLowerCase()){
+                    datum = data.den;
+                }
+            }
+        }
+        if(typeof(data.HU)!=='undefined' & krajina=="HU"){
+            pole = (slugify(data.HU)).split(", ");
+            
+            for(i=0;i<pole.length;i++){
+                if(pole[i].toLowerCase()==meno.toLowerCase()){
+                    datum = data.den;
+                }
+            }
+        }
+        if(typeof(data.AT)!=='undefined' & krajina=="AT"){
+            pole = (slugify(data.AT)).split(", ");
             
             for(i=0;i<pole.length;i++){
                 if(pole[i].toLowerCase()==meno.toLowerCase()){
