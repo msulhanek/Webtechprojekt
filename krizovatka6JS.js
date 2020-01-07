@@ -162,7 +162,7 @@ function getMovement(canvas, event) {
   let rect = canvas.getBoundingClientRect(); 
   let x = event.clientX - rect.left; 
   let y = event.clientY - rect.top; 
- if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +40 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 30 )
+ if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +40 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 60 )
  {
   window.requestAnimationFrame(stepWithFirstCar);
   poradie.add(2);
@@ -170,13 +170,13 @@ function getMovement(canvas, event) {
 
  }
 
- if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 40 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 )
+ if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 60 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 )
  {
    window.requestAnimationFrame(stepWithSecondCar);
    poradie.add(1);
    console.log(poradie);
  }
- if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 40 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 40 )
+ if( x >= thirdCarCoordinateX + 20 & x <= thirdCarCoordinateX + 50 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 90 )
  {
    window.requestAnimationFrame(stepWithThirdCar);
    poradie.add(3);

@@ -197,12 +197,12 @@ function getMovement(canvas, event) {
   poradie.add(1);
  }
 
- if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 80 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 ){
+ if( x >= secondCarCoordinateX & x <= secondCarCoordinateX + 60 & y >= secondCarCoordinateY & y <= secondCarCoordinateY + 40 ){
    window.requestAnimationFrame(stepWithSecondCar);
    poradie.add(2);
  }
 
- if( x >= thirdCarCoordinateX & x <= thirdCarCoordinateX + 30 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 80 ){
+ if( x >= thirdCarCoordinateX +20 & x <= thirdCarCoordinateX + 40 & y >= thirdCarCoordinateY & y <= thirdCarCoordinateY + 80 ){
    window.requestAnimationFrame(stepWithThirdCar);
    poradie.add(3);
  }

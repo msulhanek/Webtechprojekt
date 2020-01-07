@@ -325,7 +325,7 @@ function getMovement(canvas, event) {
   window.requestAnimationFrame(stepWithSecondCar);
   poradie.add(2);
   console.log(poradie);
-  
+
 
  }
 }
