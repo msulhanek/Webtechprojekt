@@ -130,7 +130,7 @@ function jeDobrePoradie(){
    }
 
    if(pole[1] == 2 & pole[2] == 3 | pole[1] == 3 & pole[2] == 2){
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka vyriešená správne, autá sa riadia dopravným značením';
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka vyriešená správne, autá sa riadia dopravným značením, takže prvé ide červené ktoré je na hlavnej ceste';
    }
    else{
      document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka nebola vyriešená správne <br> Nápoveda: Skontroluj dopravné značenie';

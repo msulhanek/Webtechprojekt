@@ -129,10 +129,10 @@ function jeDobrePoradie(){
    }
 
    if(pole[1] == 1 & pole[2] == 3){
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka vyriešená správne, aplikuje sa pravidlo pravej ruky';
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka vyriešená správne, aplikuje sa pravidlo pravej ruky';
    }
    else{
-     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka nebola vyriešená správne <br> Nápoveda: Aplikuj pravidlo pravej ruky';
+     document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka nebola vyriešená správne <br> Nápoveda: Aplikuj pravidlo pravej ruky';
    }
    
  } 

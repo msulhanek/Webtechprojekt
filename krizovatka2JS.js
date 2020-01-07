@@ -13,7 +13,7 @@ firstCarCoordinateX = 225;
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
-secondCarCoordinateY = 130;
+secondCarCoordinateY = 105;
 
 var poradie = new Set();
 
@@ -134,13 +134,11 @@ function jeDobrePoradie()
    var iterator1 = poradie.values();
    if(iterator1.next().value == 1)
    {
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
-     console.log("krizovatka vyriesena spravne");
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka vyriešená správne, červené dáva prednosť sprava';
    }
    else
    {
-     console.log("Krizovatka vyriesena nespravne");
-     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena nespravne';
+     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka nebola vyriešená správne <br> Nápoveda: Aplikuj pravidlo pravej ruky';
    }
    
  } 
@@ -180,7 +178,7 @@ function demoFunction()
     firstCarCoordinateY = 200;
     
     secondCarCoordinateX = 310;
-    secondCarCoordinateY = 125;
+    secondCarCoordinateY = 105;
   stepWithSecondCar();
   setTimeout(stepWithFirstCar, 3000);
 
