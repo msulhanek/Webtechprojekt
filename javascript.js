@@ -1,3 +1,4 @@
+poleDni = [31,29,31,30,31,30,31,31,30,31,30,31];
 window.onload = function(){
     divko = document.getElementById("meniny");
     
@@ -15,18 +16,24 @@ $(document).ready(function(){
 
 function zobraz(){
     var a = najdiDatum();
-    console.log(datum[2] + datum [3] + "." + datum[0] + datum[1]);
+    //console.log(datum [3]);
     $('#ukazDatum').html('');
     document.getElementById("meno").value = '';
     $('#meniny').html('');
-    $('#meniny').append("V deň "+ datum[2] + datum [3] + "." + datum[0] + datum[1] + " má meniny:" + "<br><br>");
-    $.each(poleMien[a], function(i,data){
-        if(i!="den"){
-
-            $('#meniny').append(data + "<br>");
-        }
-        
-    })
+    if(typeof(datum[3])!=='undefined'){
+        $('#meniny').append("V deň "+ datum[2] + datum [3] + "." + datum[0] + datum[1] + " má meniny:" + "<br><br>");
+        $.each(poleMien[a], function(i,data){
+            if(i!="den"){
+    
+                $('#meniny').append(data + "<br>");
+            }
+            
+        })
+    }
+    else{
+        $('#meniny').append("Neplatný dátum");
+    }
+    
 }
 
 function najdiDatum(){
@@ -45,8 +52,8 @@ function najdiDatum(){
 function zmenaDatumu(){
     x = document.getElementById("datum").value;
     if(x.search(".")!=-1){
+        druhe = overenieMesiaca(x.split(".")[1]);
          prve = overenieDna(x.split(".")[0]);
-         druhe = overenieMesiaca(x.split(".")[1]);
          zobraz();
     }
 }
@@ -55,12 +62,12 @@ function dnesnyDatum(){
     var d = new Date();
     druhe = overenieMesiaca((d.getMonth()+1).toString());
     prve = overenieDna((d.getDate()).toString());
-    console.log(prve, druhe);
     zobraz();
 }
 
 function overenieDna(den){
-    if(den>0 && den < 32 && den.length==2){
+    
+    if(den>0 && den <= poleDni[druhe-1] && den.length==2){
         return den;
     }
     else if(den>0 && den < 32 && den.length==1){
