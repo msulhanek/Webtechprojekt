@@ -213,7 +213,7 @@ function getMovement(canvas, event) {
   let rect = canvas.getBoundingClientRect(); 
   let x = event.clientX - rect.left; 
   let y = event.clientY - rect.top; 
- if( x >= firstCarCoordinateX & x <= firstCarCoordinateX +40 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 40 )
+ if( x >= firstCarCoordinateX + 20 & x <= firstCarCoordinateX +50 & y >= firstCarCoordinateY & y <= firstCarCoordinateY + 60 )
  {
   window.requestAnimationFrame(stepWithFirstCar);
   poradie.add(2);
