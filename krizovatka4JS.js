@@ -144,20 +144,14 @@ function jeDobrePoradie()
     i++;
 }
 console.log(pole);
-   if(pole[0]==3 & pole[1]==2)
+   if(pole[0]==3 & pole[1]==2 | pole[0]==2 & pole[1]==3)
    {
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
-     console.log("krizovatka vyriesena spravne");
-   }
-   else if(pole[0]==2 & pole[1]==3)
-   {
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
-     console.log("krizovatka vyriesena spravne");
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka vyriešená správne, obe autá na hlavnej prejdú súčasne';
    }
    else
    {
      console.log("Krizovatka vyriesena nespravne");
-     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena nespravne, zlte auto ma prendost sprava';
+     document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka nebola vyriešená správne <br> Nápoveda: Skontroluj dopravné značenie';
    }
    
  } 
@@ -200,16 +194,16 @@ canvasElem.addEventListener("mousedown", function(e)
 function demoFunction()
 {
   firstCarCoordinateX = 210;
-  firstCarCoordinateY = 20;
-  
-  secondCarCoordinateX = 90;
-  secondCarCoordinateY = 125;
-  
-  thirdCarCoordinateX = 210;
-  thirdCarCoordinateY = 170;
+firstCarCoordinateY = 20;
+
+secondCarCoordinateX = 90;
+secondCarCoordinateY = 133;
+
+thirdCarCoordinateX = 210;
+thirdCarCoordinateY = 170;
   stepWithThirdCar();
-  setTimeout(stepWithFirstCar,30);
-  setTimeout(stepWithSecondCar, 3000);
+  setTimeout(stepWithFirstCar,0);
+  setTimeout(stepWithSecondCar, 1000);
   
 }
 

@@ -10,7 +10,7 @@ imgAuto10.src = "auto2.png"
 let canvas = document.getElementById('Canvas1');
 let ctx = canvas.getContext('2d');
 
-firstCarCoordinateX = 210;
+firstCarCoordinateX = 215;
 firstCarCoordinateY = 20;
 
 secondCarCoordinateX = 90;
@@ -103,13 +103,11 @@ function jeDobrePoradie()
    var iterator1 = poradie.values();
    if(iterator1.next().value == 1)
    {
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
-     console.log("krizovatka vyriesena spravne");
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka vyriešená správne, modré dáva predosť sprava';
    }
    else
    {
-     console.log("Krizovatka vyriesena nespravne");
-     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena nespravne, zlte auto ma prendost sprava';
+     document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka nebola vyriešená správne <br> Nápoveda: Aplikuj pravidlo pravej ruky';
    }
    
  } 
@@ -145,11 +143,11 @@ canvasElem.addEventListener("mousedown", function(e)
 
 function demoFunction()
 {
-  firstCarCoordinateX = 210;
-  firstCarCoordinateY = 20;
+  firstCarCoordinateX = 215;
+firstCarCoordinateY = 20;
 
-  secondCarCoordinateX = 90;
-  secondCarCoordinateY = 125;
+secondCarCoordinateX = 90;
+secondCarCoordinateY = 133;
   stepWithSecondCar();
   setTimeout(stepWithFirstCar, 3000);
   

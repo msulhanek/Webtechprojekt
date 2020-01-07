@@ -135,7 +135,7 @@ function stepWithThirdCar() {
 function jeDobrePoradie()
 {
     if(secondCarCoordinateX > 300){
-        document.getElementById('vylustenieKrizovatky').innerHTML = "Krizovatka vylustena zle, zlty dostava pokutu";
+        document.getElementById('vylustenieKrizovatky').innerHTML = "Krizovatka nebola vyriešená správne, autá sa musia riadiť semafórmy";
     }
   if(  firstCarCoordinateY > 0 & thirdCarCoordinateY < 80 & poradie.size == 2)
   {
@@ -147,16 +147,11 @@ function jeDobrePoradie()
     i++;
 }
 console.log(pole);
-   if(pole[0]==3 & pole[1]==2)
+   if(pole[0]==3 & pole[1]==2|pole[0]==2 & pole[1]==3)
    {
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
-     console.log("krizovatka vyriesena spravne");
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka vyriešená správne, obe autá so zelenou prejdú súčastne';
    }
-   else if(pole[0]==2 & pole[1]==3)
-   {
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
-     console.log("krizovatka vyriesena spravne");
-   }
+   
 
    
   }
@@ -202,7 +197,7 @@ function demoFunction()
   firstCarCoordinateY = 20;
   
   secondCarCoordinateX = 90;
-  secondCarCoordinateY = 125;
+  secondCarCoordinateY = 133;
   
   thirdCarCoordinateX = 210;
   thirdCarCoordinateY = 170;

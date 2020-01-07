@@ -10,11 +10,11 @@ imgAuto10.src = "auto10.png"
 let canvas = document.getElementById('Canvas1');
 let ctx = canvas.getContext('2d');
 
-firstCarCoordinateX = 230;
+firstCarCoordinateX = 240;
 firstCarCoordinateY = 200;
 
 secondCarCoordinateX = 310;
-secondCarCoordinateY = 133;
+secondCarCoordinateY = 105;
 
 var poradie = new Set();
 
@@ -103,13 +103,11 @@ function jeDobrePoradie()
    var iterator1 = poradie.values();
    if(iterator1.next().value == 1)
    {
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
-     console.log("krizovatka vyriesena spravne");
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka vyriešená správne, žlté auto dáva prednosť pravej ruky modrému';
    }
    else
    {
-     console.log("Krizovatka vyriesena nespravne");
-     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena nespravne, modre auto ma prendost sprava';
+     document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka vyriešená nesprvívne <br> Nápoveda: Aplikuj pravidlo pravej ruky';
    }
    
  } 
@@ -145,11 +143,11 @@ canvasElem.addEventListener("mousedown", function(e)
 
 function demoFunction()
 {
-  firstCarCoordinateX = 230;
-  firstCarCoordinateY = 200;
+  firstCarCoordinateX = 240;
+firstCarCoordinateY = 200;
 
-  secondCarCoordinateX = 310;
-  secondCarCoordinateY = 125;
+secondCarCoordinateX = 310;
+secondCarCoordinateY = 105;
   stepWithSecondCar();
   setTimeout(stepWithFirstCar, 3000);
   

@@ -203,7 +203,7 @@ function jeDobrePoradie()
   if( secondCarCoordinateY < 30 & firstCarCoordinateX < 30 & poradie.size == 2)
   {
 
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne';
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka vyriešená sprváne, obe autá sa neobmedzujú takže prejdú súčastne';
      console.log("Krizovatka vyriesena spravne");
  } 
 }

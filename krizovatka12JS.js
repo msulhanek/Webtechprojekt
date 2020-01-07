@@ -263,9 +263,9 @@ function jeDobrePoradie(){
        i++;
    }
    
-
-   if(pole[1] == 2 & pole[2] == 1 & pole[3] == 4 | pole[1] == 1 & pole[2] == 2 & pole[3] == 4){
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka Vylustena spravne, auta sa riadia dopravným značením';
+   console.log(pole);
+   if(pole[1] == 1 & pole[2] == 2 & pole[3] == 4 | pole[1] == 1 & pole[2] == 4 & pole[3] == 2){
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka vyriešená správne, auta sa riadia dopravným značením, modré dostáva prednosť od vľavo odbočujúceho červeného a ostané prejdú súčastne';
    }
    else{
      document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka nebola vyriešená správne <br> Nápoveda: Skontroluj dopravné značenie';
@@ -309,17 +309,17 @@ canvasElem.addEventListener("mousedown", function(e)
 }); 
 
 function demoFunction(){
-    firstCarCoordinateX = 225;
-firstCarCoordinateY = 200;
-
-secondCarCoordinateX = 310;
-secondCarCoordinateY = 85;
-
-thirdCarCoordinateX = 210;
-thirdCarCoordinateY = 0;
-
-fourthCarCoordinateX = 80;
-fourthCarCoordinateY = 130;
+  firstCarCoordinateX = 225;
+  firstCarCoordinateY = 200;
+  
+  secondCarCoordinateX = 310;
+  secondCarCoordinateY = 85;
+  
+  thirdCarCoordinateX = 210;
+  thirdCarCoordinateY = 0;
+  
+  fourthCarCoordinateX = 80;
+  fourthCarCoordinateY = 135;
 
 currentLoopIndexForBottomCar = 0;
 currentLoopIndexForRightCar = 0;

@@ -18,7 +18,7 @@ firstCarCoordinateY = 200;
 secondCarCoordinateX = 310;
 secondCarCoordinateY = 106;
 
-thirdCarCoordinateX = 210;
+thirdCarCoordinateX = 213;
 thirdCarCoordinateY = 0;
 
 var poradie = new Set();
@@ -177,7 +177,7 @@ function jeDobrePoradie(){
    
 
    if(pole[1] == 1 & pole[2] == 2){
-    document.getElementById('vylustenieKrizovatky').innerHTML = 'Krizovatka vyriešená správne, autá sa riadia dopravným značením';
+    document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka vyriešená správne, autá sa riadia dopravným značením, žlté dostáva prednosť od vľavo odbočujúceho červeného';
    }
    else{
      document.getElementById('vylustenieKrizovatky').innerHTML = 'Križovatka nebola vyriešená správne <br> Nápoveda: Skontroluj dopravné značenie';
@@ -222,7 +222,7 @@ firstCarCoordinateY = 200;
 secondCarCoordinateX = 310;
 secondCarCoordinateY = 106;
 
-thirdCarCoordinateX = 210;
+thirdCarCoordinateX = 213;
 thirdCarCoordinateY = 0;
 currentLoopIndex = 0;
 
