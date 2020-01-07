@@ -131,14 +131,12 @@ nav{
 
 }
 
-#Canvas1{
-    background-image: "/images/krizovatka1.png";
-}
+
 footer  {
     text-align: center;
     padding: 3px;
     background: #4CA1AF;  
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF);  
     background: linear-gradient(to right, #C4E0E5, #4CA1AF); 
     position: fixed;
     bottom: 0em;
@@ -168,7 +166,7 @@ footer  {
     border-style: solid;
     border-radius: 1em;
     background: #56CCF2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     width: 10%;
@@ -189,7 +187,7 @@ footer  {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
   position: relative;
