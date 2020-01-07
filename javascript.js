@@ -138,6 +138,15 @@ function najdiMeno(meno){
                 }
             }
         }
+        if(typeof(data.PL)!=='undefined' & krajina=="PL"){
+            pole = (slugify(data.PL)).split(", ");
+            
+            for(i=0;i<pole.length;i++){
+                if(pole[i].toLowerCase()==meno.toLowerCase()){
+                    datum = data.den;
+                }
+            }
+        }
     })
     
     return datum;
